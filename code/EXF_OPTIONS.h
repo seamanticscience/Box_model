@@ -171,7 +171,7 @@ C   unless to reproduce old results (obtained with inconsistent old code)
 
 C   Relaxation to monthly climatologies.
 #define ALLOW_CLIMSST_RELAXATION
-#define ALLOW_CLIMSSS_RELAXATION
+#undef ALLOW_CLIMSSS_RELAXATION
 
 C   Allows to read-in seaice fraction from files (areaMaskFile)
 #undef EXF_SEAICE_FRACTION
