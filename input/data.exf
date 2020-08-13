@@ -1,0 +1,59 @@
+#
+# *********************
+# External Forcing Data
+# *********************
+ &EXF_NML_01
+#
+ useExfCheckRange  = .TRUE.,
+# repeatPeriod      = 31104000.0,
+ exf_iprec         = 64,
+ exf_monFreq       = 2592000.,
+#useRelativeWind = .TRUE.,
+#
+ &
+
+# *********************
+ &EXF_NML_02
+#
+ atempperiod       = 0.0,
+ aqhperiod         = 0.0,
+#
+ ustressperiod       = 2592000.,
+ vstressperiod       = 2592000.,
+#
+ precipperiod      = 0.0,
+ swdownperiod      = 0.0,
+ lwdownperiod      = 0.0,
+#
+ climsstperiod      = 2592000.,
+ climsstTauRelax    = 2592000.,
+#
+# climsssperiod      = 2592000.,
+# climsssTauRelax    = 2592000.,
+#
+ atempfile         = ' ',
+ aqhfile           = ' ',
+ ustressfile       = 'taux_forc.bin',
+ vstressfile       = 'tauy_forc.bin',
+ precipfile        = ' ',
+ lwdownfile        = ' ',
+ swdownfile        = ' ',
+ runoffFile        = ' '
+ climsstfile       = 'sst_relax.bin',
+ climsssfile       = ' ',
+ &
+
+# *********************
+ &EXF_NML_03
+#exf_offset_atemp=5;
+ &
+
+# *********************
+# old open64 compiler (4.2.1) cannot skip this namelist to read in the next one;
+# comment out this namelist (not read).
+#&EXF_NML_04
+#&
+
+# *********************
+ &EXF_NML_OBCS
+ &
