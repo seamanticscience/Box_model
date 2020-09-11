@@ -22,7 +22,7 @@
  diffKrBL79scl = 150.,
 
 # advection
- tempAdvScheme=7,
+ tempAdvScheme=30,
  saltStepping=.FALSE.,
  staggerTimeStep=.TRUE.,
  multiDimAdvection=.TRUE.,
