@@ -5,8 +5,7 @@
  useKPP=.TRUE.,
  useDiagnostics=.TRUE.,
  useMNC=.TRUE.,
-#useMY82=.TRUE.,
-#useEXF=.TRUE.,
-#useCal=.TRUE.,
-#usePtracers=.TURE.,
+ useEXF=.TRUE.,
+ usePtracers=.TRUE.,
+ useGCHEM=.TRUE.,
  &

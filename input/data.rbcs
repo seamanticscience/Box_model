@@ -1,20 +1,34 @@
 # RBCS package parameters:
  &RBCS_PARM01
-    tauRelaxT=864000.,
-#    tauRelaxS=864000.,
-    relaxMaskFile(1)='rbcs_mask.bin',
-    relaxTFile='theta_sbdy.bin',
-#   relaxSFile='salt_sbdy.bin',
-    useRBCtemp=.TRUE.,
-#   useRBCsalt=.TRUE.,
-#   rbcsForcingOffset=43200,
    rbcsForcingPeriod=0.0,
    rbcsForcingCycle=0.0,
+#   rbcsForcingOffset=43200,
+   useRBCtemp=.TRUE.,
+   tauRelaxT=864000.,
+   relaxTFile='theta_sbdy.bin',
+   relaxMaskFile(1)='theta_rbcs_mask.bin',
+   useRBCsalt=.FALSE.,
+#   tauRelaxS=864000.,
+#   relaxSFile='salt_sbdy.bin',
+   relaxMaskFile(2)='salt_rbcs_mask.bin',
+   relaxMaskFile(3)='ptr_rbcs_mask.bin',
  &
 
-# RBCS for pTracers (read this namelist only when ptracers pkg is compiled)
+# RBCS for pTracers on a 6hr timescale
  &RBCS_PARM02
-#  useRBCptrnum(1)    = .TRUE.,
-#  tauRelaxPTR(1)     = 21600.,
-#  relaxPtracerFile(1)='rbcs_Tr1_fld.bin',
+  useRBCpTrNum(1)    = .TRUE.,
+  tauRelaxPTR(1)     = 864000.,
+  relaxPtracerFile(1)='dic_sbdy.bin',
+  useRBCpTrNum(2)    = .TRUE.,
+  tauRelaxPTR(2)     = 864000.,
+  relaxPtracerFile(2)='alk_sbdy.bin',
+  useRBCpTrNum(3)    = .TRUE.,
+  tauRelaxPTR(3)     = 864000.,
+  relaxPtracerFile(3)='po4_sbdy.bin',
+  useRBCpTrNum(4)    = .FALSE.,
+  tauRelaxPTR(4)     = 0.,
+  relaxPtracerFile(4)=' ',
+  useRBCpTrNum(5)    = .TRUE.,
+  tauRelaxPTR(5)     = 864000.,
+  relaxPtracerFile(5)='do2_sbdy.bin',
  &

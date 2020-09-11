@@ -1,6 +1,3 @@
-C $Header: /u/gcmpack/MITgcm/verification/tutorial_offline/code/PTRACERS_SIZE.h,v 1.1 2005/10/01 02:31:45 edhill Exp $
-C $Name:  $
-
 #ifdef ALLOW_PTRACERS
 
 CBOP
@@ -16,7 +13,7 @@ C  and is set here (default 1)
 C
 C     Number of tracers
       INTEGER PTRACERS_num
-      PARAMETER(PTRACERS_num = 16 )
+      PARAMETER(PTRACERS_num = 5 )
 
 CEOP
 #endif /* ALLOW_PTRACERS */

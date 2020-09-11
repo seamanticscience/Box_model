@@ -8,6 +8,7 @@
 # repeatPeriod      = 31104000.0,
  exf_iprec         = 64,
  exf_monFreq       = 2592000.,
+ readStressOnAgrid =.TRUE.,
 #useRelativeWind = .TRUE.,
 #
  &
@@ -51,8 +52,8 @@
 # *********************
 # old open64 compiler (4.2.1) cannot skip this namelist to read in the next one;
 # comment out this namelist (not read).
-#&EXF_NML_04
-#&
+ &EXF_NML_04
+ &
 
 # *********************
  &EXF_NML_OBCS
