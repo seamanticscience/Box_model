@@ -10,7 +10,8 @@
    useRBCsalt=.FALSE.,
 #   tauRelaxS=864000.,
 #   relaxSFile='salt_sbdy.bin',
-   relaxMaskFile(2)='salt_rbcs_mask.bin',
+#   relaxMaskFile(2)='salt_rbcs_mask.bin',
+#  useRBCptracers=.TRUE.,
    relaxMaskFile(3)='ptr_rbcs_mask.bin',
  &
 

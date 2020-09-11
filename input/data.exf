@@ -6,11 +6,10 @@
 #
  useExfCheckRange  = .TRUE.,
 # repeatPeriod      = 31104000.0,
- exf_iprec         = 64,
+ exf_iprec         = 32,
  exf_monFreq       = 2592000.,
  readStressOnAgrid =.TRUE.,
 #useRelativeWind = .TRUE.,
-#
  &
 
 # *********************
@@ -19,17 +18,17 @@
  atempperiod       = 0.0,
  aqhperiod         = 0.0,
 #
- ustressperiod       = 2592000.,
- vstressperiod       = 2592000.,
+ ustressperiod       = -12.,
+ vstressperiod       = -12.,
 #
  precipperiod      = 0.0,
  swdownperiod      = 0.0,
  lwdownperiod      = 0.0,
 #
- climsstperiod      = 2592000.,
+ climsstperiod      = -12.,
  climsstTauRelax    = 2592000.,
 #
-# climsssperiod      = 2592000.,
+# climsssperiod      = -12.,
 # climsssTauRelax    = 2592000.,
 #
  atempfile         = ' ',

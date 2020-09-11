@@ -1,11 +1,12 @@
 # Packages
  &PACKAGES
- useRBCS=.TRUE.,
- useGMREDI=.TRUE.,
- useKPP=.TRUE.,
  useDiagnostics=.TRUE.,
- useMNC=.TRUE.,
- useEXF=.TRUE.,
- usePtracers=.TRUE.,
- useGCHEM=.TRUE.,
+ useMNC        =.TRUE.,
+ useCAL        =.TRUE.,
+ useEXF        =.TRUE.,
+ useRBCS       =.TRUE.,
+ useKPP        =.TRUE.,
+ useGMREDI     =.TRUE.,
+ usePtracers   =.TRUE.,
+ useGCHEM      =.TRUE.,
  &
