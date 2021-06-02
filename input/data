@@ -8,43 +8,67 @@
 # debugLevel=5,
 
 # viscosity
- viscAr=3.0E-4,
-
+ implicitViscosity=.TRUE.,
+ viscAr=5.0E-5,
+ viscAh=1.E0,
+ viscAhGrid=5.E-2,
  viscC4Leith=2.75,
  viscC4Leithd=2.75,
- viscA4GridMax=0.8,
+ viscA4GridMax=0.5,
  useAreaViscLength=.TRUE.,
 
 # diffusivity
- diffKrBL79surf= 3.E-5,
- diffKrBL79deep= 13.E-5,
- diffKrBL79Ho  = -2000.,
- diffKrBL79scl = 150.,
+ implicitDiffusion=.TRUE.,
+ diffKhT=0.E3,
+ diffKhS=0.E3,
+ ivdc_kappa=0.,
+ diffKrT =5.E-5,
+ diffKrS =5.E-5,
+# diffKrBL79surf= 3.E-5,
+# diffKrBL79deep= 13.E-5,
+# diffKrBL79Ho  = -2000.,
+# diffKrBL79scl = 150.,
 
 # advection
+ tempStepping=.TRUE.,
  tempAdvScheme=7,
- saltStepping=.FALSE.,
+ saltStepping=.TRUE.,
+ saltAdvScheme=7,
  staggerTimeStep=.TRUE.,
  multiDimAdvection=.TRUE.,
 # vectorInvariantMomentum=.TRUE.,
 
 # initial vertical profiles of S
- sRef=57*35.0
+# sRef = 34.36819076, 34.3942337 , 34.44524002, 34.51035309, 34.57383728,
+#        34.62701416, 34.68018723, 34.71925354, 34.76103592, 34.7938652 ,
+#        34.8104126 , 34.81800995, 34.8256073 , 34.803685  , 34.7817627 ,
+#        34.76179504, 34.74378204, 34.72576904, 34.71144257, 34.69711609,
+#        34.68094635, 34.66293335, 34.64492035, 34.62766571, 34.61041107,
+#        34.59771423, 34.58916824, 34.57818031, 34.55994759, 34.53577934,
+#        34.5046228 , 34.47395447, 34.43905334, 34.40662826, 34.3679409 ,
+#        34.33262558, 34.30070885, 34.34941689, 34.41211975, 34.46032486,
+#        34.49436005, 34.51635166, 34.53444588, 34.55071247, 34.56429977,
+#        34.57733189, 34.58996445, 34.6032457 , 34.61574608, 34.62946964,
+#        34.64136902, 34.65250998, 34.66263643, 34.67030359, 34.67697817,
+#        34.68187569, 34.68653221, 34.68983444, 34.69158173, 34.69272038, 
+ sRef = 60*34.5,
 
 # initial vertical profiles of T
- tRef=13.862178, 13.7751  , 13.621306, 13.403543, 13.140183, 12.857821,
-      12.544712, 12.223616, 11.907748, 11.599158, 11.328143, 11.069456,
-      10.81077 , 10.585499, 10.360228, 10.151152,  9.958273,  9.765394,
-       9.60022 ,  9.435046,  9.280336,  9.13609 ,  8.991844,  8.85412 ,
-       8.716396,  8.584536,  8.45854 ,  8.332543,  8.218564,  8.104585,
-       7.940074,  7.727102,  7.495065,  7.242349,  6.970322,  6.697124,
-       6.34904 ,  5.951154,  5.598319,  5.134227,  4.596948,  4.128788,
-       3.729527,  3.405197,  3.136845,  2.918887,  2.728665,  2.564669,
-       2.322321,  2.05455 ,  1.771789,  1.52852 ,  1.340314,  1.206123,
-       1.159291,  1.207256,  1.316534,
-       
+ tRef = 25.57409477, 25.44818878, 25.15892029, 24.9100113 , 24.54534531,
+        24.17947006, 23.74738312, 23.24617767, 22.13695525, 21.21526146,
+        20.53609812, 19.77515683, 19.01421555, 18.26313436, 17.51205325,
+        16.77566508, 16.05396973, 15.33227438, 14.6060358 , 13.87979716,
+        13.3879694 , 13.13055249, 12.87313559, 12.57830944, 12.28348332,
+        12.02896633, 11.80404809, 11.54409876, 11.22796815, 10.8654578 ,
+        10.42817251,  9.89419445,  9.27094173,  8.63609978,  7.89900581,
+         7.21920722,  6.54899502,  5.92608328,  5.27233785,  4.75507822,
+         4.26632442,  3.89602759,  3.59884285,  3.33287163,  3.09067396,
+         2.8806061 ,  2.66154771,  2.45928249,  2.24088913,  2.05092943,
+         1.88971273,  1.77133667,  1.67007692,  1.60463685,  1.55113987,
+         1.49934288,  1.46982251,  1.47990814,  1.49574054,  1.53771832,
+                                                                                                                                                             
 # equation of state
- eosType='LINEAR',
+  eosType='JMD95Z',
 
 # boundary conditions
  no_slip_sides=.TRUE.,
@@ -52,24 +76,22 @@
  bottomDragQuadratic=0.003,
  sideDragFactor=2.0,
 
-# implicit diffusion and convective adjustment
- implicitDiffusion=.TRUE.,
- implicitViscosity=.TRUE.,
-
+# Surface boundary condition
  implicitFreeSurface=.TRUE.,
-
-# exact volume conservation
  exactConserv=.TRUE.,
 # useRealFreshWaterFlux=.TRUE.,
-
  allowFreezing=.TRUE.,
+
+# Locally convert salt to tracers
+ convertFW2Salt=-1.,
 
 # C-V scheme for Coriolis term
  useCDscheme=.FALSE.,
+ useJamartWetPoints=.TRUE., 
 
 # "Lopped" cells
  hFacMin=.2,
- hFacMinDr=5.,
+ hFacMinDr=10.,
 
 # file IO stuff
  readBinaryPrec=32,
@@ -80,25 +102,27 @@
 
 # Elliptic solver parameters
  &PARM02
- cg2dMaxIters=500,
+ cg2dMaxIters=1000,
  cg2dTargetResidual=1.0E-9,
  &
 
 # Time stepping parameters
  &PARM03
  nIter0=0,
-# 25920 timesteps per year
- nTimeSteps=2592000,
- deltaT=1200.0,
+ nTimeSteps=7200000, 
+# endtime=311040000,
+ deltaTmom   =  3600.0,
+ deltaTtracer= 43200.0,
+ deltaTclock = 43200.0, 
  abEps=0.1,
 
  momDissip_In_AB=.FALSE.,
- pChkptFreq=31104000,
+ pChkptFreq=3110400000.0,
  chkptFreq=0.0,
 # prefer diagnostic package averages
-# taveFreq=31104000.0
- dumpFreq=31104000.0,
- monitorFreq=2592000.0,
+ taveFreq    = 3110400000.0
+ dumpFreq    = 3110400000.0,
+ monitorFreq = 864000.0,
  
 # Moved to EXF  
 # tauThetaClimRelax=2592000.0, 
@@ -110,17 +134,17 @@
 # Gridding parameters
  &PARM04
  usingSphericalPolarGrid=.TRUE.,
- delR= 10.,   10.,   10.,  10.,  10.,  10.,  10.,  10.,  10.,  10.,
-       10.,   10.,   10.,  10.,  10.,  10.,  10.,  10.,  10.,  10.,
-       10.,   10.,   10.,  10.,  10.,  10.,  10.,  10.,  10.,  10.,
-       20.,   20.,   25.,  25.,  30.,  30.,  50.,  50.,  50.,
-       100., 100.,  100., 100., 100., 100., 100., 100., 100., 
-       250., 250.,  500., 500., 500., 500., 500., 500., 500.
- ygOrigin=0.,
+ delR=  10.,  10.,  10.,  10.,  10.,  10.,  10.,  10.,  10.,  10.,  
+        10.,  10.,  10.,  10.,  10.,  10.,  10.,  10.,  10.,  10.,  
+        10.,  10.,  10.,  10.,  10.,  10.,  11.,  13.,  15.,  19.,  
+        25.,  32.,  40.,  49.,  59.,  69.,  77.,  84.,  90.,  94.,  
+        97.,  99., 100., 101., 104., 111., 125., 144., 167., 192.,
+       218., 245., 271., 297., 323., 349., 375., 401., 427., 453.,
+ ygOrigin=-12.,
  xgOrigin=0.,
 # 3.0 degree resolution
-# dySpacing= 20*3.0,
-# dxSpacing= 48*3.0,
+# dySpacing= 3.0,
+# dxSpacing= 3.0,
 # 2.0 degree resolution
 # dySpacing= 30*2.0,
 # dxSpacing= 72*2.0,
@@ -134,5 +158,7 @@
 
 # Input datasets
  &PARM05
- bathyFile='depth_linslp.bin',
+ bathyFile    = 'depth_expslp.bin',
+# mdsioLocalDir= 'model_output/',
+ the_run_name = 'Idealized North Pacific, exponential western boundary slope extended to 12S',
  &

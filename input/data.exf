@@ -28,8 +28,8 @@
  climsstperiod      = -12.,
  climsstTauRelax    = 2592000.,
 #
-# climsssperiod      = -12.,
-# climsssTauRelax    = 2592000.,
+ climsssperiod      = -12.,
+ climsssTauRelax    = 2592000.,
 #
  atempfile         = ' ',
  aqhfile           = ' ',
@@ -40,7 +40,7 @@
  swdownfile        = ' ',
  runoffFile        = ' '
  climsstfile       = 'sst_relax.bin',
- climsssfile       = ' ',
+ climsssfile       = 'sss_relax.bin',
  &
 
 # *********************
